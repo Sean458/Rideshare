@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+            <div style="width: 40%; margin: 25px auto;">
+                <br><br>
+            <h1 style="text-align: center">Register</h1>
+            
+                <form action="register" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="firstName" placeholder="first name" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="lastName" placeholder="last name" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" name="email" placeholder="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="userName" placeholder="User Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="confirmPassword" placeholder="confirm password" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                    </div>
+                </form>
+                <a href="/users/login">Login<a></a>
+                <br><br><br><br>
+            </div>
+    </div>
+    
+{% endblock body %}
+

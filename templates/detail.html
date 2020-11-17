@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Vehicle Info{% endblock title %}
+
+{% block body %}
+
+    <div class="container text-center">
+          <div class="card  mb-3 ">
+            <div class="card-header">
+              {{ vehicle.make }} {{ vehicle.model }}
+            </div>
+            <img class="card-img-top" src="{{vehicle.imageurl }}" alt="Card image cap" width="100px">
+            <div class="card-body">
+              <h5 class="card-title">Rs. {{ vehicle.cost }} / hour</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Vehicle No : {{ vehicle.vehicleID }}</li>
+              <li class="list-group-item">Mileage : {{ vehicle.mileage }} KM/L</li>
+              <li class="list-group-item"> Damage : {{ vehicle.damage }}</li>
+              <li class="list-group-item">{{ vehicle.seats }} Seaters</li>
+            </ul>
+            <div class="card-body">
+              <a href="/{{vehicle.vehicleID}}/book" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+     </div>
+
+{% endblock body %}
